@@ -10,29 +10,29 @@
 	<string>UCLALibrary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2D6909AE4E23E985B2F5959CD4818AE25C19B01C</key>
+		<key>64317CAAC0D99B4BC9AFDF6154724E3A5E2132C1</key>
 		<string>github.com:orcudy/UCLALibrary.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>UCLALibrary.xcworkspace</string>
+	<string>Code/UCLALibrary.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2D6909AE4E23E985B2F5959CD4818AE25C19B01C</key>
-		<string>..</string>
+		<key>64317CAAC0D99B4BC9AFDF6154724E3A5E2132C1</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:orcudy/UCLALibrary.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2D6909AE4E23E985B2F5959CD4818AE25C19B01C</string>
+	<string>64317CAAC0D99B4BC9AFDF6154724E3A5E2132C1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2D6909AE4E23E985B2F5959CD4818AE25C19B01C</string>
+			<string>64317CAAC0D99B4BC9AFDF6154724E3A5E2132C1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>UCLALibrary</string>
 		</dict>

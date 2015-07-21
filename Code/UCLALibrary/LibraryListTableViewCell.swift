@@ -11,4 +11,6 @@ import Foundation
 class LibraryListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var libraryNameLabel: UILabel!
+    @IBOutlet weak var libraryHoursLabel: UILabel!
+    @IBOutlet weak var libraryIndicatorImage: UIImageView!
 }

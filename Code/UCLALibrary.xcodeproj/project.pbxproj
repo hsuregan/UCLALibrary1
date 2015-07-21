@@ -473,9 +473,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UCLALibrary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/chris/Desktop/UCLALibrary/UCLALibrary/UCLALibraryBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/chris/Desktop/UCLALibrary/Code/UCLALibrary/UCLALibraryBridgingHeader.h;
 			};
 			name = Debug;
 		};
@@ -485,9 +486,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UCLALibrary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/chris/Desktop/UCLALibrary/UCLALibrary/UCLALibraryBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/chris/Desktop/UCLALibrary/Code/UCLALibrary/UCLALibraryBridgingHeader.h;
 			};
 			name = Release;
 		};

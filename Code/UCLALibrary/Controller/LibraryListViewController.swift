@@ -25,6 +25,8 @@ class LibraryListViewController: UIViewController {
         
         librariesTableView.dataSource = self
         librariesTableView.delegate = self
+        librariesTableView.layer.cornerRadius = 5
+        librariesTableView.separatorStyle = .None
         
         sendRequestToURLWithString(libraryUnitsURL)
     }
@@ -55,7 +57,7 @@ class LibraryListViewController: UIViewController {
     
     // MARK: Navigation 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "displayLibraryViewController" {
+        if segue.identifier == "showLibraryDisplayViewController" {
             var destination = segue.destinationViewController as! LibraryDisplayViewController
             var indexPath = self.librariesTableView.indexPathForSelectedRow()
             destination.library = libraries[(indexPath?.row)!]
@@ -70,7 +72,7 @@ extension LibraryListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("libraryNameCell") as! LibraryListTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("libraryListCell") as! LibraryListTableViewCell
         cell.libraryNameLabel.text = libraries[indexPath.row].name
         return cell
     }
