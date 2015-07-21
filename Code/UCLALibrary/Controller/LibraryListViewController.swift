@@ -63,6 +63,10 @@ class LibraryListViewController: UIViewController {
             destination.library = libraries[(indexPath?.row)!]
         }
     }
+    
+    @IBAction func unwindFromLibraryDisplayViewController(segue: UIStoryboardSegue, sender: UIButton?) {
+        
+    }
 }
 
 // MARK: UITableViewDataSource

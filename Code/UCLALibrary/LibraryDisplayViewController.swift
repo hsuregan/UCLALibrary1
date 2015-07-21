@@ -13,6 +13,7 @@ import UIKit
 class LibraryDisplayViewController: UIViewController {
     
     @IBOutlet weak var libraryHoursScrollView: UIScrollView!
+    @IBOutlet weak var titleLabel: UILabel!
 
     let libraryDataBaseURL = "http://webservices.library.ucla.edu/libservices/hours/unit/"
     let manager = AFHTTPRequestOperationManager()
@@ -24,7 +25,7 @@ class LibraryDisplayViewController: UIViewController {
         super.viewDidLoad()
         
         if let title = library.name {
-            self.title = title
+            titleLabel.text = title
         }
         
         if let libraryID = library.ID {
@@ -85,7 +86,7 @@ class LibraryDisplayViewController: UIViewController {
 //                self.library.satNote = schedule["satNote"].string
 //                self.library.sunNote = schedule["sunNote"].string
                 
-                self.setupScrollView()
+                //self.setupScrollView()
                 println("success")
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
