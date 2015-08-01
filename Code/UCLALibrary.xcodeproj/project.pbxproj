@@ -476,7 +476,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/chris/Desktop/UCLALibrary/Code/UCLALibrary/UCLALibraryBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = UCLALibrary/UCLALibraryBridgingHeader.h;
 			};
 			name = Debug;
 		};
@@ -489,7 +489,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/chris/Desktop/UCLALibrary/Code/UCLALibrary/UCLALibraryBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = UCLALibrary/UCLALibraryBridgingHeader.h;
 			};
 			name = Release;
 		};
