@@ -45,3 +45,5 @@ release_notes.*
 .hg
 .svn
 CVS
+Assets/*
+UCLALibrary.wiki/*
