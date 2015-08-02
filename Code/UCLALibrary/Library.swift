@@ -24,42 +24,6 @@ class Library {
     let ID: String?
     
     var operatingHoursForDay: [String : OperatingHours] = [String : OperatingHours]()
-    
-    
-//    var monClosed: Bool?
-//    var monCloses: NSDate?
-//    var monOpens: NSDate?
-//    var monNote: String?
-//    
-//    var tuesClosed: Bool?
-//    var tuesCloses: NSDate?
-//    var tuesOpens: NSDate?
-//    var tuesNote: String?
-//    
-//    var wedClosed: Bool?
-//    var wedCloses: NSDate?
-//    var wedOpens: NSDate?
-//    var wedNote: String?
-//    
-//    var thursClosed: Bool?
-//    var thursCloses: NSDate?
-//    var thursOpens: NSDate?
-//    var thursNote: String?
-//    
-//    var friClosed: Bool?
-//    var friCloses: NSDate?
-//    var friOpens: NSDate?
-//    var friNote: String?
-//    
-//    var satClosed: Bool?
-//    var satCloses: NSDate?
-//    var satOpens: NSDate?
-//    var satNote: String?
-//
-//    var sunClosed: Bool?
-//    var sunCloses: NSDate?
-//    var sunOpens: NSDate?
-//    var sunNote: String?
 
     //custom properties
     var dataLastRetrieved: NSTimeInterval

@@ -15,7 +15,7 @@ class LibraryListViewController: UIViewController {
     @IBOutlet weak var librariesTableView: UITableView!
     
     let manager = AFHTTPRequestOperationManager()
-    let libraryUnitsURL = "http://webservices.library.ucla.edu/libservices/units"
+    let unitsURL = "http://webservices.library.ucla.edu/libservices/units"
     
     var libraries: [Library] = [Library]()
     
@@ -28,11 +28,11 @@ class LibraryListViewController: UIViewController {
         librariesTableView.layer.cornerRadius = 5
         librariesTableView.separatorStyle = .None
         
-        sendRequestToURLWithString(libraryUnitsURL)
+        fetchUnitDataForAllLibraries(unitsURL)
     }
     
     // MARK: AFNetworking
-    func sendRequestToURLWithString(URL: String) {
+    func fetchUnitDataForAllLibraries(URL: String) {
         manager.GET(URL, parameters: nil,
             success: {(operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 let json = JSON(response)
@@ -62,10 +62,6 @@ class LibraryListViewController: UIViewController {
             var indexPath = self.librariesTableView.indexPathForSelectedRow()
             destination.library = libraries[(indexPath?.row)!]
         }
-    }
-    
-    @IBAction func unwindFromLibraryDisplayViewController(segue: UIStoryboardSegue, sender: UIButton?) {
-        
     }
 }
 
