@@ -42,7 +42,7 @@ class LibraryListViewController: UIViewController {
                     let ID = libraryData[index]["id"].string
                     let code = libraryData[index]["code"].string
                     if let name = name, ID = ID, code = code {
-                        var library = Library(name: name, ID: ID.toInt()!, code: code)
+                        var library = Library(name: name, ID: ID, code: code)
                         self.libraries.append(library)
                         self.librariesTableView.reloadData()
                     }

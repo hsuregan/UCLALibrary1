@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		83738D691B5ACF8100E70A32 /* LibraryHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83738D681B5ACF8100E70A32 /* LibraryHoursView.swift */; };
 		83738D6B1B5AE3A300E70A32 /* LibraryHoursView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83738D6A1B5AE3A300E70A32 /* LibraryHoursView.xib */; };
+		838045FB1B6D824F003CE83A /* UIColor+ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */; };
+		838045FD1B6D8DDC003CE83A /* Libraries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 838045FC1B6D8DDC003CE83A /* Libraries.plist */; };
 		83CB32E71B58ADEE00CA8E41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */; };
 		83CB32EA1B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83CB32E81B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld */; };
 		83CB32EF1B58ADEE00CA8E41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */; };
@@ -19,7 +21,7 @@
 		83EC86F51B58BBCF009FE533 /* LibraryDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86F41B58BBCF009FE533 /* LibraryDisplayViewController.swift */; };
 		83EC86F71B58BC53009FE533 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86F61B58BC53009FE533 /* Library.swift */; };
 		83EC86F91B58BD37009FE533 /* LibraryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86F81B58BD37009FE533 /* LibraryListTableViewCell.swift */; };
-		83EC86FB1B58CFC5009FE533 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86FA1B58CFC5009FE533 /* Extensions.swift */; };
+		83EC86FB1B58CFC5009FE533 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86FA1B58CFC5009FE533 /* String+Utilities.swift */; };
 		CE11A561F403BDC35A32D53F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5611009AA4446C08C8C0437C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		5611009AA4446C08C8C0437C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83738D681B5ACF8100E70A32 /* LibraryHoursView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryHoursView.swift; sourceTree = "<group>"; };
 		83738D6A1B5AE3A300E70A32 /* LibraryHoursView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryHoursView.xib; sourceTree = "<group>"; };
+		838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ApplicationColors.swift"; sourceTree = "<group>"; };
+		838045FC1B6D8DDC003CE83A /* Libraries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Libraries.plist; sourceTree = "<group>"; };
 		83CB32E11B58ADEE00CA8E41 /* UCLALibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCLALibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CB32E51B58ADEE00CA8E41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +57,7 @@
 		83EC86F41B58BBCF009FE533 /* LibraryDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDisplayViewController.swift; sourceTree = "<group>"; };
 		83EC86F61B58BC53009FE533 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		83EC86F81B58BD37009FE533 /* LibraryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryListTableViewCell.swift; sourceTree = "<group>"; };
-		83EC86FA1B58CFC5009FE533 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		83EC86FA1B58CFC5009FE533 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		B9EE7F99451864B16513E8AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		838045F81B6D81BC003CE83A /* Library List */ = {
+			isa = PBXGroup;
+			children = (
+				83EC86F21B58BB83009FE533 /* LibraryListViewController.swift */,
+				83EC86F81B58BD37009FE533 /* LibraryListTableViewCell.swift */,
+			);
+			name = "Library List";
+			sourceTree = "<group>";
+		};
+		838045F91B6D81D1003CE83A /* Library Diplay */ = {
+			isa = PBXGroup;
+			children = (
+				83EC86F41B58BBCF009FE533 /* LibraryDisplayViewController.swift */,
+				83738D681B5ACF8100E70A32 /* LibraryHoursView.swift */,
+				83738D6A1B5AE3A300E70A32 /* LibraryHoursView.xib */,
+			);
+			name = "Library Diplay";
+			sourceTree = "<group>";
+		};
 		83CB32D81B58ADEE00CA8E41 = {
 			isa = PBXGroup;
 			children = (
@@ -107,9 +130,9 @@
 		83CB32E31B58ADEE00CA8E41 /* UCLALibrary */ = {
 			isa = PBXGroup;
 			children = (
-				83EC86F11B58BB49009FE533 /* Controller */,
-				83EC86F01B58BB43009FE533 /* View */,
-				83EC86EF1B58BB39009FE533 /* Model */,
+				838045F81B6D81BC003CE83A /* Library List */,
+				838045F91B6D81D1003CE83A /* Library Diplay */,
+				83EC86EF1B58BB39009FE533 /* Models */,
 				83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */,
 				83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */,
 				83CB32F01B58ADEE00CA8E41 /* Images.xcassets */,
@@ -117,7 +140,8 @@
 				83CB32E81B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld */,
 				83CB32E41B58ADEE00CA8E41 /* Supporting Files */,
 				83EC86EE1B58B38C009FE533 /* UCLALibraryBridgingHeader.h */,
-				83EC86FA1B58CFC5009FE533 /* Extensions.swift */,
+				83EC86FA1B58CFC5009FE533 /* String+Utilities.swift */,
+				838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */,
 			);
 			path = UCLALibrary;
 			sourceTree = "<group>";
@@ -126,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				83CB32E51B58ADEE00CA8E41 /* Info.plist */,
+				838045FC1B6D8DDC003CE83A /* Libraries.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,31 +172,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		83EC86EF1B58BB39009FE533 /* Model */ = {
+		83EC86EF1B58BB39009FE533 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				83EC86F61B58BC53009FE533 /* Library.swift */,
 			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		83EC86F01B58BB43009FE533 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				83EC86F81B58BD37009FE533 /* LibraryListTableViewCell.swift */,
-				83738D681B5ACF8100E70A32 /* LibraryHoursView.swift */,
-				83738D6A1B5AE3A300E70A32 /* LibraryHoursView.xib */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		83EC86F11B58BB49009FE533 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				83EC86F21B58BB83009FE533 /* LibraryListViewController.swift */,
-				83EC86F41B58BBCF009FE533 /* LibraryDisplayViewController.swift */,
-			);
-			name = Controller;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D7A4BAFDA8558E534AE9B4A7 /* Pods */ = {
@@ -268,6 +274,7 @@
 			files = (
 				83CB32EF1B58ADEE00CA8E41 /* Main.storyboard in Resources */,
 				83CB32F41B58ADEE00CA8E41 /* LaunchScreen.xib in Resources */,
+				838045FD1B6D8DDC003CE83A /* Libraries.plist in Resources */,
 				83738D6B1B5AE3A300E70A32 /* LibraryHoursView.xib in Resources */,
 				83CB32F11B58ADEE00CA8E41 /* Images.xcassets in Resources */,
 			);
@@ -337,12 +344,13 @@
 			files = (
 				83CB32EA1B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld in Sources */,
 				83EC86F51B58BBCF009FE533 /* LibraryDisplayViewController.swift in Sources */,
+				838045FB1B6D824F003CE83A /* UIColor+ApplicationColors.swift in Sources */,
 				83738D691B5ACF8100E70A32 /* LibraryHoursView.swift in Sources */,
 				83EC86F71B58BC53009FE533 /* Library.swift in Sources */,
 				83EC86F91B58BD37009FE533 /* LibraryListTableViewCell.swift in Sources */,
 				83CB32E71B58ADEE00CA8E41 /* AppDelegate.swift in Sources */,
 				83EC86F31B58BB83009FE533 /* LibraryListViewController.swift in Sources */,
-				83EC86FB1B58CFC5009FE533 /* Extensions.swift in Sources */,
+				83EC86FB1B58CFC5009FE533 /* String+Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

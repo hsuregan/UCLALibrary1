@@ -21,7 +21,7 @@ struct OperatingHours {
 class Library {
     let code: String?
     let name: String?
-    let ID: Int?
+    let ID: String?
     
     var operatingHoursForDay: [String : OperatingHours] = [String : OperatingHours]()
     
@@ -64,7 +64,7 @@ class Library {
     //custom properties
     var dataLastRetrieved: NSTimeInterval
     
-    init(name: String, ID: Int, code: String) {
+    init(name: String, ID: String, code: String) {
         self.name = name
         self.ID = ID
         self.code = code

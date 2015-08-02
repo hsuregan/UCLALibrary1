@@ -16,7 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //set custom navigation bar properties
+        var textAttributes = [NSObject : AnyObject]()
+        textAttributes[NSForegroundColorAttributeName] = UIColor.applicationWhite()
+        textAttributes[NSFontAttributeName] = UIFont(name: "Avenir-Medium", size: 25)
+        
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().tintColor = UIColor.applicationWhite()
+        UINavigationBar.appearance().barTintColor = UIColor.applicationBlue()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+
         return true
     }
 

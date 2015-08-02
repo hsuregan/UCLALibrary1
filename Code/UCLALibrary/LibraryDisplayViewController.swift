@@ -12,8 +12,10 @@ import UIKit
 
 class LibraryDisplayViewController: UIViewController {
     
-    @IBOutlet weak var libraryHoursScrollView: UIScrollView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var verticalScrollView: UIScrollView!
+    @IBOutlet weak var verticalScrollViewContentView: UIView!
+    
+    @IBOutlet weak var horizontalScrollView: UIScrollView!
 
     let libraryDataBaseURL = "http://webservices.library.ucla.edu/libservices/hours/unit/"
     let manager = AFHTTPRequestOperationManager()
@@ -23,14 +25,43 @@ class LibraryDisplayViewController: UIViewController {
     // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let width = UIScreen.mainScreen().bounds.size.width
+        let height = verticalScrollViewContentView.frame.height
+        verticalScrollView.contentSize =  CGSize(width: width, height: height)
         
-        if let title = library.name {
-            titleLabel.text = title
+        if let title = self.library.name, libraryID = self.library.ID {
+            self.title = title
         }
         
-        if let libraryID = library.ID {
+        if let libraryID = self.library.ID {
             sendRequestToURLWithString(libraryDataBaseURL + String(libraryID))
         }
+        
+        //set custom back button for navigation bar
+        var backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("unwindToLibraryListView:"))
+        backButton.image = UIImage(named: "backArrow")
+        self.navigationItem.leftBarButtonItem = backButton
+        
+        
+        //get data from Libraries.plist
+        var libraries = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Libraries", ofType: "plist")!)
+        if let ID = self.library.ID {
+            let library = libraries?.objectForKey(ID) as! NSDictionary
+            let imageName = library.objectForKey("imageName") as! String
+            let longitude = library.objectForKey("longitude") as! Float
+            let latitude = library.objectForKey("latitude") as! Float
+            
+//            libraryImageView.image = UIImage(named: imageName)
+        } else {
+            println("\(self.library.name) does not have a code")
+            EXIT_FAILURE
+        }
+        
+
+    }
+    
+    func unwindToLibraryListView(sender: UIButton!) {
+        performSegueWithIdentifier("unwindFromLibraryDisplayViewController", sender: self)
     }
     
     // MARK: AFNetworking
@@ -86,7 +117,7 @@ class LibraryDisplayViewController: UIViewController {
 //                self.library.satNote = schedule["satNote"].string
 //                self.library.sunNote = schedule["sunNote"].string
                 
-                //self.setupScrollView()
+                self.setupScrollView()
                 println("success")
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
@@ -113,9 +144,12 @@ class LibraryDisplayViewController: UIViewController {
             libraryHoursView.closingTimeLabel.text = "\(closeTimeComponents.hour):\(closeTimeComponents.minute)"
             
             libraryHoursView.frame.origin = CGPoint(x: offset * libraryHoursView.frame.origin.x, y: libraryHoursView.frame.origin.y)
-            libraryHoursScrollView.addSubview(libraryHoursView)
+            
+            
+            horizontalScrollView.addSubview(libraryHoursView)
             offset++
-            libraryHoursScrollView.contentSize = CGSize(width: libraryHoursView.frame.size.width * offset, height: libraryHoursView.frame.size.height)
+            horizontalScrollView.contentSize = CGSize(width: libraryHoursView.frame.size.width * offset, height: libraryHoursView.frame.size.height)
+            
         }
         
 
