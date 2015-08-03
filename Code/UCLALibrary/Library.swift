@@ -8,30 +8,38 @@
 
 import Foundation
 
-struct OperatingHours {
-    var closes: NSDate?
-    var opens: NSDate?
+class OperatingHours {
+    var day: String
+    var closes: String?
+    var opens: String?
     
-    init(opens: NSDate?, closes: NSDate?) {
+    init(day: String, opens: String?, closes: String?) {
+        self.day = day
         self.opens = opens
         self.closes = closes
     }
 }
 
-class Library {
-    let code: String?
-    let name: String?
-    let ID: String?
+class Library: NSObject {
+    let name: String
+    let ID: String
     
-    var operatingHoursForDay: [String : OperatingHours] = [String : OperatingHours]()
-
-    //custom properties
+    let imageName: String
+    let longitude: Float
+    let latitude: Float
+    
+    var operatingHours: [OperatingHours]?
     var dataLastRetrieved: NSTimeInterval
     
-    init(name: String, ID: String, code: String) {
+    init(name: String, ID: String) {
         self.name = name
         self.ID = ID
-        self.code = code
         dataLastRetrieved = 0
+        
+        let libraries = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Libraries", ofType: "plist")!)
+        let library = libraries?.objectForKey(ID) as! NSDictionary
+        self.imageName = library.objectForKey("imageName") as! String
+        self.longitude = library.objectForKey("longitude") as! Float
+        self.latitude = library.objectForKey("latitude") as! Float
     }
 }
