@@ -6,21 +6,26 @@
 //  Copyright (c) 2015 Chris Orcutt. All rights reserved.
 //
 
+//TODO: Find a better place for these
+let secondsInHour: NSTimeInterval = 3600
+let secondsInMinute: NSTimeInterval = 60
+
 import UIKit
 
 class LibraryListViewController: UIViewController {
     
-    let dataManager = DataManager()
-    
+    var dataManager: DataManager!
     var libraries: [Library]?
+    
+    let green = UIImage(named: "greenIndicator")
+    let yellow = UIImage(named: "yellowIndicator")
+    let red = UIImage(named: "redIndicator")
     
     @IBOutlet weak var librariesTableView: UITableView!
     
     // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dataManager.dataForLibraries()
         
         librariesTableView.dataSource = self
         librariesTableView.delegate = self
@@ -82,26 +87,61 @@ extension LibraryListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("libraryListCell") as! LibraryListTableViewCell
-        let library = libraries?[indexPath.row]
         
-        cell.libraryNameLabel.text = library?.name ?? ""
-        
-        if let operatingHours = library?.operatingHours {
-            let opens = operatingHours[0].opens
-            let closes = operatingHours[0].closes
-            
-            if let opens = opens, closes = closes {
-                cell.libraryHoursLabel.text = "\(opens) - \(closes)"
-            } else {
-                cell.libraryHoursLabel.text = "Hours not available"
-            }
-            
-        } else {
-            self.dataManager.dataForLibraryWithID(library!.ID)
-            cell.libraryHoursLabel.text = ""
+        if let library = libraries?[indexPath.row] {
+            cell.libraryNameLabel.text = library.name
+            cell.libraryIndicatorImage.image = determineLibraryCellImage(library, cell: cell)
+            cell.libraryHoursLabel.text = determineLibraryCellHours(library)
         }
         
         return cell
+    }
+    
+    func determineLibraryCellImage(library: Library, cell: LibraryListTableViewCell) -> UIImage {
+
+        var timeDifference: NSTimeInterval?
+        let index = NSDate().indexForDate()
+        if let closes = library.operatingHours?[index].closes {
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZ"
+            
+            let calendar = NSCalendar.currentCalendar()
+            let todayComp = calendar.components((.CalendarUnitHour | .CalendarUnitMinute), fromDate: NSDate())
+            let todayHour = todayComp.hour
+            let todayMinute = todayComp.minute
+            
+            let libraryComp = calendar.components((.CalendarUnitHour | .CalendarUnitMinute), fromDate: closes)
+            let libraryHour = libraryComp.hour
+            let libraryMinute = libraryComp.minute
+            
+            let hourDifference = (libraryHour - todayHour) * Int(secondsInHour)
+            let minuteDifference = (libraryMinute - todayMinute) * Int(secondsInMinute)
+            timeDifference = NSTimeInterval(hourDifference + minuteDifference)
+        }
+        
+        if let timeDifference = timeDifference {
+            cell.libraryIndicatorImage.layer.hidden = false
+            if timeDifference <= 0 {
+                return self.red!
+            } else if secondsInHour > timeDifference && timeDifference > 0 {
+                return self.yellow!
+            } else {
+                return self.green!
+            }
+        }
+        return UIImage()
+    }
+    
+    func determineLibraryCellHours(library: Library) -> String {
+        let index = NSDate().indexForDate()
+        if let opens = library.operatingHours?[index].opens, closes = library.operatingHours?[index].closes {
+            let openingTime = NSDateFormatter.localizedStringFromDate(opens, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+            let closingTime = NSDateFormatter.localizedStringFromDate(closes, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+                return "\(openingTime) - \(closingTime)"
+        } else {
+            return "Hours not available"
+        }
     }
 }
 

@@ -13,10 +13,16 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var dataManager = DataManager()
-
+    let dataManager = DataManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //prefetch library list data
+        dataManager.dataForLibraries()
+        
+        //dependency injection
+        let libraryListViewController = (window?.rootViewController?.childViewControllers[0] as! LibraryListViewController)
+        libraryListViewController.dataManager = dataManager
+        
         
         //set custom navigation bar properties
         var textAttributes = [NSObject : AnyObject]()

@@ -10,6 +10,7 @@ import Foundation
 import AFNetworking
 import SwiftyJSON
 
+//wrapper which provides unique way (ID) to lookup libraries in other VCs
 class OperatingHoursData {
     var ID: String
     var operatingHours: [OperatingHours]
@@ -22,12 +23,14 @@ class OperatingHoursData {
 
 class DataManager {
     
-    let unitURL = "http://webservices.library.ucla.edu/libservices/units"
-    let baseDataURL = "http://webservices.library.ucla.edu/libservices/hours/unit/"
-    let manager = AFHTTPRequestOperationManager()
+    private let unitURL = "http://webservices.library.ucla.edu/libservices/units"
+    private let baseDataURL = "http://webservices.library.ucla.edu/libservices/hours/unit/"
+    private let manager = AFHTTPRequestOperationManager()
     
-    var libraries: [Library]?
-    
+    //cache
+    private var libraries: [Library]?
+   
+    // MARK: DataManagerAPI
     func dataForLibraries() {
         if let libraries = self.libraries {
             postNotification("LibraryListDataReady", data: self.libraries)
@@ -37,28 +40,25 @@ class DataManager {
     }
     
     func dataForLibraryWithID(ID: String) {
-        
-        //get library with ID, check if operating hours are non-null
-        let predicate = NSPredicate(format: "ID == %@", ID)
-        let libraries = (self.libraries! as NSArray).filteredArrayUsingPredicate(predicate)
-        
-        if let library = libraries.first as? Library {
-            if let operatingHours = library.operatingHours {
-                var operatingHoursData = OperatingHoursData(ID: ID, operatingHours: operatingHours)
-                self.postNotification("LibraryDataReady", data: operatingHoursData)
-            } else {
-                fetchLibraryDataFromNetwork(ID)
+        self.libraries?.filter { (element: Library) -> Bool in
+            if element.ID == ID {
+                if let operatingHours = element.operatingHours {
+                    var operatingHoursData = OperatingHoursData(ID: ID, operatingHours: operatingHours)
+                    self.postNotification("LibraryDataReady", data: operatingHoursData)
+                } else {
+                    self.fetchLibraryDataFromNetwork(ID)
+                }
             }
+            return false
         }
-        
     }
     
     // MARK: Notifications
-    func postNotification(name: String, data: AnyObject?) {
+    private func postNotification(name: String, data: AnyObject?) {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         let notification: NSNotification
         if let data: AnyObject = data {
-            let userInfo = NSDictionary(object: data, forKey: "data") as [NSObject : AnyObject]
+            let userInfo = ["data" : data]
             notification = NSNotification(name: name, object: nil, userInfo: userInfo)
         } else {
             notification = NSNotification(name: name, object: nil, userInfo: nil)
@@ -66,31 +66,40 @@ class DataManager {
         notificationCenter.postNotification(notification)
     }
     
+    
+    
     //MARK: AFNetworking
     private func fetchLibraryUnitDataFromNetwork() {
         manager.GET(unitURL, parameters: nil,
             success: {(operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 let json = JSON(response)
                 var libraryData = json["unit"]
+                self.libraries = [Library]()
                 for index in 0..<libraryData.count {
                     let name = libraryData[index]["name"].string
                     let ID = libraryData[index]["id"].string
                     if let name = name, ID = ID {
                         var library = Library(name: name, ID: ID)
-                        if self.libraries == nil {
-                            self.libraries = [Library]()
-                        }
                         self.libraries!.append(library)
                     }
                 }
                 
                 self.postNotification("LibraryListDataReady", data: self.libraries)
+                self.fetchAllLibraryData()
                 println("unit success")
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 //TODO: implement failure condition
                 println("failure: error \(error)")
         })
+    }
+    
+    private func fetchAllLibraryData() {
+        if let libraries = libraries {
+            for library in libraries {
+                fetchLibraryDataFromNetwork(library.ID)
+            }
+        }
     }
     
     private func fetchLibraryDataFromNetwork(ID: String) {
@@ -113,29 +122,20 @@ class DataManager {
                 for index in 0..<daysOfWeek.count {
                     let openingDate = dateFormatter.dateFromString(schedule[responseOpenKeys[index]].string ?? "")
                     let closingDate = dateFormatter.dateFromString(schedule[responseCloseKeys[index]].string ?? "")
-                    
-                    let openingTime: String
-                    let closingTime: String
-                    
-                    openingDate == nil ? (openingTime = "") : (openingTime = NSDateFormatter.localizedStringFromDate(openingDate!, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle))
-
-                    closingDate == nil ? (closingTime = "") : (closingTime = NSDateFormatter.localizedStringFromDate(closingDate!, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle))
-                    
-                    
-                    let hours = OperatingHours(day: daysOfWeek[index], opens: openingTime, closes: closingTime)
+                    let hours = OperatingHours(day: daysOfWeek[index], opens: openingDate, closes: closingDate)
                     operatingHours.append(hours)
                 }
                 
-                let predicate = NSPredicate(format: "ID == %@", ID)
-                let library = (self.libraries! as NSArray).filteredArrayUsingPredicate(predicate)
-                if let library = library.first as? Library{
-                    library.operatingHours = operatingHours
+                self.libraries = self.libraries?.map { (element: Library) -> Library in
+                    if element.ID == ID {
+                        element.operatingHours = operatingHours
+                    }
+                    return element
                 }
                 
                 var operatingHoursData = OperatingHoursData(ID: ID, operatingHours: operatingHours)
                 self.postNotification("LibraryDataReady", data: operatingHoursData)
-                
-                println("success")
+                println("success for \(ID)")
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 //TODO: implement failure condition

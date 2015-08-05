@@ -13,6 +13,7 @@
 		838045FD1B6D8DDC003CE83A /* Libraries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 838045FC1B6D8DDC003CE83A /* Libraries.plist */; };
 		83A16DB81B6EAEC70005F337 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A16DB71B6EAEC70005F337 /* Utility.swift */; };
 		83A16DBA1B6EB2FC0005F337 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A16DB91B6EB2FC0005F337 /* DataManager.swift */; };
+		83B632231B70668A00CAF5A7 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B632221B70668A00CAF5A7 /* NSDate+Utilities.swift */; };
 		83CB32E71B58ADEE00CA8E41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */; };
 		83CB32EA1B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83CB32E81B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld */; };
 		83CB32EF1B58ADEE00CA8E41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		838045FC1B6D8DDC003CE83A /* Libraries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Libraries.plist; sourceTree = "<group>"; };
 		83A16DB71B6EAEC70005F337 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		83A16DB91B6EB2FC0005F337 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		83B632221B70668A00CAF5A7 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		83CB32E11B58ADEE00CA8E41 /* UCLALibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCLALibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CB32E51B58ADEE00CA8E41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,15 +140,16 @@
 				838045F91B6D81D1003CE83A /* Library Diplay */,
 				83EC86EF1B58BB39009FE533 /* Models */,
 				83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */,
-				83A16DB71B6EAEC70005F337 /* Utility.swift */,
 				83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */,
 				83CB32F01B58ADEE00CA8E41 /* Images.xcassets */,
 				83CB32F21B58ADEE00CA8E41 /* LaunchScreen.xib */,
 				83CB32E81B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld */,
 				83CB32E41B58ADEE00CA8E41 /* Supporting Files */,
 				83EC86EE1B58B38C009FE533 /* UCLALibraryBridgingHeader.h */,
+				83A16DB71B6EAEC70005F337 /* Utility.swift */,
 				83EC86FA1B58CFC5009FE533 /* String+Utilities.swift */,
 				838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */,
+				83B632221B70668A00CAF5A7 /* NSDate+Utilities.swift */,
 			);
 			path = UCLALibrary;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				83CB32EA1B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld in Sources */,
 				83EC86F51B58BBCF009FE533 /* LibraryDisplayViewController.swift in Sources */,
 				838045FB1B6D824F003CE83A /* UIColor+ApplicationColors.swift in Sources */,
+				83B632231B70668A00CAF5A7 /* NSDate+Utilities.swift in Sources */,
 				83738D691B5ACF8100E70A32 /* LibraryHoursView.swift in Sources */,
 				83EC86F71B58BC53009FE533 /* Library.swift in Sources */,
 				83EC86F91B58BD37009FE533 /* LibraryListTableViewCell.swift in Sources */,

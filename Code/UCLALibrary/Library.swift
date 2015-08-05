@@ -10,10 +10,10 @@ import Foundation
 
 class OperatingHours {
     var day: String
-    var closes: String?
-    var opens: String?
+    var closes: NSDate?
+    var opens: NSDate?
     
-    init(day: String, opens: String?, closes: String?) {
+    init(day: String, opens: NSDate?, closes: NSDate?) {
         self.day = day
         self.opens = opens
         self.closes = closes

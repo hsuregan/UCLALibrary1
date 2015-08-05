@@ -45,7 +45,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="rdV-1k-nkm"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="zjd-FS-Og3">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="zjd-FS-Og3">
                                                     <rect key="frame" x="499" y="19" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="A9D-Fv-QCd"/>
