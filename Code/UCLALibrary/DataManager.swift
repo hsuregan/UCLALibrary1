@@ -79,8 +79,11 @@ class DataManager {
                     let name = libraryData[index]["name"].string
                     let ID = libraryData[index]["id"].string
                     if let name = name, ID = ID {
-                        var library = Library(name: name, ID: ID)
-                        self.libraries!.append(library)
+                        let libraries = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("NewLibraries", ofType: "plist")!)
+                        if libraries?.objectForKey(ID) as? NSDictionary != nil {
+                            var library = Library(name: name, ID: ID)
+                            self.libraries!.append(library)
+                        }
                     }
                 }
                 
@@ -89,8 +92,21 @@ class DataManager {
                 println("unit success")
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                //TODO: implement failure condition
+                //TODO: implement failure condition -- note response internally failed August 5, 2015
+                // idea: have unit data locally (check if it ever changes)
                 println("failure: error \(error)")
+                
+//                let libraryData = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("LibraryUnits", ofType: "plist")!)
+//                
+//                
+//                for index in 0..<libraryData!.count {
+//                    let name = libraryData[index]["name"].string
+//                    let ID = libraryData[index]["id"].string
+//                    if let name = name, ID = ID {
+//                        var library = Library(name: name, ID: ID)
+//                        self.libraries!.append(library)
+//                    }
+//                }
         })
     }
     
@@ -140,6 +156,8 @@ class DataManager {
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 //TODO: implement failure condition
                 println("failure: error \(error)")
+                
+                
         })
     }
 }

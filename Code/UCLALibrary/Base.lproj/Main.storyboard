@@ -128,8 +128,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWL-N0-Rxo">
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDm-Ai-a0p">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDm-Ai-a0p">
+                                        <rect key="frame" x="0.0" y="-500" width="600" height="1000"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powell" translatesAutoresizingMaskIntoConstraints="NO" id="ZoA-FZ-vS8">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
@@ -144,11 +144,34 @@
                                                     <constraint firstAttribute="height" constant="200" id="Ljg-gd-YYM"/>
                                                 </constraints>
                                             </scrollView>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EtR-Lf-x20">
+                                                <rect key="frame" x="0.0" y="500" width="600" height="500"/>
+                                            </mapView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKC-k8-Z70">
+                                                <rect key="frame" x="458" y="962" width="132" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="132" id="8Cg-OX-n1M"/>
+                                                    <constraint firstAttribute="height" constant="28" id="Wua-0z-oeQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Open in Maps">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openInMapsButtonTapped:" destination="ycC-ZH-BKU" eventType="touchUpInside" id="lC1-KW-sk6"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.43368063869325812" green="1" blue="0.37544326227518332" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="L3u-9S-FLc" secondAttribute="trailing" id="52X-2f-6UY"/>
+                                            <constraint firstAttribute="trailing" secondItem="cKC-k8-Z70" secondAttribute="trailing" constant="10" id="BM7-BH-Zy2"/>
+                                            <constraint firstAttribute="trailing" secondItem="EtR-Lf-x20" secondAttribute="trailing" id="E2D-cb-XG0"/>
                                             <constraint firstItem="ZoA-FZ-vS8" firstAttribute="top" secondItem="YDm-Ai-a0p" secondAttribute="top" id="GHD-OJ-ruL"/>
+                                            <constraint firstItem="EtR-Lf-x20" firstAttribute="leading" secondItem="YDm-Ai-a0p" secondAttribute="leading" id="Iqt-ik-It2"/>
+                                            <constraint firstAttribute="bottom" secondItem="EtR-Lf-x20" secondAttribute="bottom" id="JXq-hN-BTI"/>
+                                            <constraint firstAttribute="bottom" secondItem="cKC-k8-Z70" secondAttribute="bottom" constant="10" id="LVv-jY-Dba"/>
+                                            <constraint firstItem="EtR-Lf-x20" firstAttribute="top" secondItem="L3u-9S-FLc" secondAttribute="bottom" id="MCs-jc-pJd"/>
                                             <constraint firstItem="ZoA-FZ-vS8" firstAttribute="leading" secondItem="YDm-Ai-a0p" secondAttribute="leading" id="eVJ-iv-6ad"/>
                                             <constraint firstAttribute="trailing" secondItem="ZoA-FZ-vS8" secondAttribute="trailing" id="hGv-74-d38"/>
                                             <constraint firstItem="L3u-9S-FLc" firstAttribute="leading" secondItem="YDm-Ai-a0p" secondAttribute="leading" id="iic-w2-BWN"/>
@@ -188,6 +211,7 @@
                     <navigationItem key="navigationItem" id="gwA-uW-alp"/>
                     <connections>
                         <outlet property="horizontalScrollView" destination="L3u-9S-FLc" id="LVn-LF-yIC"/>
+                        <outlet property="mapView" destination="EtR-Lf-x20" id="YkA-Lf-wUN"/>
                         <outlet property="verticalScrollView" destination="XWL-N0-Rxo" id="nX2-rY-S4j"/>
                         <outlet property="verticalScrollViewContentView" destination="YDm-Ai-a0p" id="cHA-Qb-2sy"/>
                         <segue destination="PVr-YN-Xzi" kind="unwind" identifier="unwindFromLibraryDisplayViewController" unwindAction="unwindFromLibraryDisplayViewController:sender:" id="8si-nb-wsH"/>

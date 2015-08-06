@@ -5,18 +5,18 @@
 	<key>5</key>
 	<dict>
 		<key>latitude</key>
-		<integer>0</integer>
+		<real>34.074104</real>
 		<key>longitude</key>
-		<integer>0</integer>
+		<real>-118.439308</real>
 		<key>imageName</key>
-		<string>powell</string>
+		<string>arts</string>
 	</dict>
 	<key>1</key>
 	<dict>
 		<key>latitude</key>
-		<integer>0</integer>
+		<real>34.066374</real>
 		<key>longitude</key>
-		<integer>0</integer>
+		<real>-118.443066</real>
 		<key>imageName</key>
 		<string>biomedical</string>
 	</dict>
@@ -68,9 +68,9 @@
 	<key>10</key>
 	<dict>
 		<key>latitude</key>
-		<integer>0</integer>
+		<real>34.075112</real>
 		<key>longitude</key>
-		<integer>0</integer>
+		<real>-118.441485</real>
 		<key>imageName</key>
 		<string>eastAsian</string>
 	</dict>

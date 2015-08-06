@@ -9,6 +9,8 @@
 let secondsInDay = 60 * 60 * 24
 
 import UIKit
+import MapKit
+import AddressBook
 
 class LibraryDisplayViewController: UIViewController {
     
@@ -18,12 +20,46 @@ class LibraryDisplayViewController: UIViewController {
     @IBOutlet weak var verticalScrollViewContentView: UIView!
     @IBOutlet weak var horizontalScrollView: UIScrollView!
     
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBAction func openInMapsButtonTapped(sender: AnyObject) {
+        let latitude = library.location.latitude
+        let longitude = library.location.longitude
+        let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude) , longitude: CLLocationDegrees(longitude))
+        
+        let address = [kABPersonAddressStreetKey as NSObject: library.location.street as String,
+            kABPersonAddressCityKey: library.location.city,
+            kABPersonAddressStateKey: library.location.state,
+            kABPersonAddressZIPKey: library.location.ZIP,
+            kABPersonAddressCountryCodeKey: library.location.country]
+        
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: address)
+        var mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Powell Library"
+        
+        mapItem.openInMapsWithLaunchOptions(nil)
+    }
+    
+
+    
     
     // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = library.name
+        
+        mapView.delegate = self
+        let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(library.location.latitude), longitude: CLLocationDegrees(library.location.longitude))
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.region = region
+        var annotation = MKPointAnnotation()
+        annotation.coordinate = center
+        annotation.title = "My Annotation"
+        annotation.subtitle = "My subtitle"
+        mapView.addAnnotation(annotation)
+        
         
         setupVerticalScrollView()
         setupHorizontalScrollView()
@@ -114,4 +150,9 @@ class LibraryDisplayViewController: UIViewController {
     func unwindToLibraryListView(sender: UIButton!) {
         navigationController?.popToRootViewControllerAnimated(true)
     }
+}
+
+// MARK: MKMapViewDelegate
+extension LibraryDisplayViewController: MKMapViewDelegate {
+    
 }

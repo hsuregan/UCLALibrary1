@@ -7,8 +7,14 @@
 //
 
 //TODO: Find a better place for these
-let secondsInHour: NSTimeInterval = 3600
-let secondsInMinute: NSTimeInterval = 60
+let secondsInHour = 3600
+let secondsInMinute = 60
+
+let green = UIImage(named: "greenIndicator")
+let yellow = UIImage(named: "yellowIndicator")
+let red = UIImage(named: "redIndicator")
+
+
 
 import UIKit
 
@@ -16,10 +22,6 @@ class LibraryListViewController: UIViewController {
     
     var dataManager: DataManager!
     var libraries: [Library]?
-    
-    let green = UIImage(named: "greenIndicator")
-    let yellow = UIImage(named: "yellowIndicator")
-    let red = UIImage(named: "redIndicator")
     
     @IBOutlet weak var librariesTableView: UITableView!
     
@@ -45,6 +47,18 @@ class LibraryListViewController: UIViewController {
         notificationCenter.removeObserver(self, name: "LibraryDataReady", object: nil)
     }
     
+    func sortResults() {
+        self.libraries?.sort() {(a, b) -> Bool in
+            if a.state?.rawValue > b.state?.rawValue {
+                return true
+            } else if a.state?.rawValue == b.state?.rawValue {
+                return a.name < b.name
+            } else {
+                return false
+            }
+        }
+    }
+    
     
     // MARK: Notifications
     func processLibraryListData(notification: NSNotification) {
@@ -53,7 +67,7 @@ class LibraryListViewController: UIViewController {
         self.libraries = (libraries as! [Library])
         librariesTableView.reloadData()
     }
-    
+
     func processLibraryData(notification: NSNotification) {
         let data = notification.userInfo!
         let operatingHoursData = data["data"] as! OperatingHoursData
@@ -64,6 +78,8 @@ class LibraryListViewController: UIViewController {
         var library = (libraries! as NSArray).filteredArrayUsingPredicate(predicate)
         if let library = library.first as? Library {
             library.operatingHours = operatingHours
+            library.updateState()
+            sortResults()
             librariesTableView.reloadData()
         }
     }
@@ -87,7 +103,6 @@ extension LibraryListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("libraryListCell") as! LibraryListTableViewCell
-        
         if let library = libraries?[indexPath.row] {
             cell.libraryNameLabel.text = library.name
             cell.libraryIndicatorImage.image = determineLibraryCellImage(library, cell: cell)
@@ -97,40 +112,22 @@ extension LibraryListViewController: UITableViewDataSource {
         return cell
     }
     
-    func determineLibraryCellImage(library: Library, cell: LibraryListTableViewCell) -> UIImage {
-
-        var timeDifference: NSTimeInterval?
+    func determineLibraryCellImage(library: Library, cell: LibraryListTableViewCell) -> UIImage? {
         let index = NSDate().indexForDate()
-        if let closes = library.operatingHours?[index].closes {
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZ"
-            
-            let calendar = NSCalendar.currentCalendar()
-            let todayComp = calendar.components((.CalendarUnitHour | .CalendarUnitMinute), fromDate: NSDate())
-            let todayHour = todayComp.hour
-            let todayMinute = todayComp.minute
-            
-            let libraryComp = calendar.components((.CalendarUnitHour | .CalendarUnitMinute), fromDate: closes)
-            let libraryHour = libraryComp.hour
-            let libraryMinute = libraryComp.minute
-            
-            let hourDifference = (libraryHour - todayHour) * Int(secondsInHour)
-            let minuteDifference = (libraryMinute - todayMinute) * Int(secondsInMinute)
-            timeDifference = NSTimeInterval(hourDifference + minuteDifference)
-        }
-        
-        if let timeDifference = timeDifference {
+        if let state = library.state {
             cell.libraryIndicatorImage.layer.hidden = false
-            if timeDifference <= 0 {
-                return self.red!
-            } else if secondsInHour > timeDifference && timeDifference > 0 {
-                return self.yellow!
-            } else {
-                return self.green!
+            switch state {
+            case .Open:
+                return green!
+            case .ClosingSoon:
+                return yellow!
+            case .Closed:
+                return red!
+            default:
+                EXIT_FAILURE
             }
         }
-        return UIImage()
+        return nil
     }
     
     func determineLibraryCellHours(library: Library) -> String {
@@ -151,4 +148,6 @@ extension LibraryListViewController: UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
+
+
 
