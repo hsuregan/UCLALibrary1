@@ -28,7 +28,6 @@ class LibraryHoursView: UIView {
         super.init(frame: frame)
         
         NSBundle.mainBundle().loadNibNamed("LibraryHoursView", owner: self, options: nil)
-//        view.frame = frame
         bounds = view.bounds
         self.addSubview(view)
     }

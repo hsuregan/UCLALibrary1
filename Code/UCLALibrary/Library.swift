@@ -52,9 +52,9 @@ class Library: NSObject {
         let ZIP = library.objectForKey("ZIP") as! String
         let state = library.objectForKey("state") as! String
         let country = library.objectForKey("country") as! String
-        let longitude = library.objectForKey("longitude") as! Float
         let latitude = library.objectForKey("latitude") as! Float
-        
+        let longitude = library.objectForKey("longitude") as! Float
+
         self.imageName = imageName
         self.location = Location(building: building, street: street, city: city, ZIP: ZIP, state: state, country: country, latitude: latitude, longitude: longitude)
         
@@ -62,7 +62,7 @@ class Library: NSObject {
     
     func updateState() {
         let index = NSDate().indexForDate()
-        if let opens = self.operatingHours?[index].closes, closes = self.operatingHours?[index].closes {
+        if let opens = self.operatingHours?[index].opens, closes = self.operatingHours?[index].closes {
             let calendar = NSCalendar.currentCalendar()
             let todayComponents = calendar.components((.CalendarUnitHour | .CalendarUnitMinute), fromDate: NSDate())
             let todayHour = todayComponents.hour
@@ -83,6 +83,14 @@ class Library: NSObject {
             let closeHourDifference = (closeHour - todayHour) * secondsInHour
             let closeMinuteDifference = (closeMinute - todayMinute) * secondsInMinute
             let closeTimeDifference = closeHourDifference + closeMinuteDifference
+            
+//            println()
+//            println("-- \(self.name) --")
+//            println("closes: \(closes)")
+//            println("opens: \(opens)")
+//            println("closeTimeDifference: \(closeTimeDifference)")
+//            println("openTimeDifference: \(openTimeDifference)")
+            
             
             if secondsInHour > closeTimeDifference && closeTimeDifference > 0 {
                 self.state = .ClosingSoon

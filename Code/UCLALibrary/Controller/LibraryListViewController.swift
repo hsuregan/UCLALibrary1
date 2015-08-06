@@ -59,7 +59,6 @@ class LibraryListViewController: UIViewController {
         }
     }
     
-    
     // MARK: Notifications
     func processLibraryListData(notification: NSNotification) {
         let data = notification.userInfo!
@@ -101,14 +100,12 @@ extension LibraryListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var cell = tableView.dequeueReusableCellWithIdentifier("libraryListCell") as! LibraryListTableViewCell
         if let library = libraries?[indexPath.row] {
             cell.libraryNameLabel.text = library.name
             cell.libraryIndicatorImage.image = determineLibraryCellImage(library, cell: cell)
             cell.libraryHoursLabel.text = determineLibraryCellHours(library)
         }
-        
         return cell
     }
     

@@ -35,7 +35,7 @@ class LibraryDisplayViewController: UIViewController {
         
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: address)
         var mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = "Powell Library"
+        mapItem.name = library.name
         
         mapItem.openInMapsWithLaunchOptions(nil)
     }
@@ -56,8 +56,8 @@ class LibraryDisplayViewController: UIViewController {
         mapView.region = region
         var annotation = MKPointAnnotation()
         annotation.coordinate = center
-        annotation.title = "My Annotation"
-        annotation.subtitle = "My subtitle"
+        annotation.title = library.name
+//        annotation.subtitle = "My subtitle"
         mapView.addAnnotation(annotation)
         
         
