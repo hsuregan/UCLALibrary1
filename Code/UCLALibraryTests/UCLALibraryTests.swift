@@ -33,4 +33,8 @@ class UCLALibraryTests: XCTestCase {
         }
     }
     
+    func someRandomTest() {
+        println("simeRandomTest")
+    }
+    
 }

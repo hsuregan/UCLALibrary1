@@ -38,13 +38,10 @@ class Library: NSObject {
     var dataLastRetrieved: NSTimeInterval
     
     init(name: String, ID: String) {
-        self.name = name
-        self.ID = ID
-        dataLastRetrieved = 0
-        
-        let libraries = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("NewLibraries", ofType: "plist")!)
+        let libraries = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Libraries", ofType: "plist")!)
         let library = (libraries?.objectForKey(ID) as? NSDictionary)!
         
+        let name = library.objectForKey("name") as! String
         let imageName = library.objectForKey("imageName") as! String
         let building = library.objectForKey("building") as? String
         let street = library.objectForKey("street") as! String
@@ -55,7 +52,11 @@ class Library: NSObject {
         let latitude = library.objectForKey("latitude") as! Float
         let longitude = library.objectForKey("longitude") as! Float
 
+        self.name = name
+        self.ID = ID
         self.imageName = imageName
+
+        self.dataLastRetrieved = 0
         self.location = Location(building: building, street: street, city: city, ZIP: ZIP, state: state, country: country, latitude: latitude, longitude: longitude)
         
     }

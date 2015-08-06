@@ -4,246 +4,260 @@
 <dict>
 	<key>5</key>
 	<dict>
-		<key>latitude</key>
-		<real>34.074104</real>
-		<key>longitude</key>
-		<real>-118.439308</real>
+		<key>name</key>
+		<string>Arts Library</string>
 		<key>imageName</key>
 		<string>arts</string>
+		<key>longitude</key>
+		<real>-118.439218</real>
+		<key>latitude</key>
+		<real>34.074079</real>
+		<key>building</key>
+		<string>Public Affairs Building</string>
+		<key>street</key>
+		<string>1400 Public Affairs Building</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1392</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
 	<key>1</key>
 	<dict>
-		<key>latitude</key>
-		<real>34.066374</real>
-		<key>longitude</key>
-		<real>-118.443066</real>
+		<key>name</key>
+		<string>Biomedical Library</string>
+		<key>secondaryName</key>
+		<string>Louise M. Darling</string>
 		<key>imageName</key>
 		<string>biomedical</string>
-	</dict>
-	<key>29</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
 		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>clarkMemorial</string>
-	</dict>
-	<key>54</key>
-	<dict>
+		<real>-118.442408</real>
 		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>cliccLab</string>
-	</dict>
-	<key>55</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>cliccClassrooms</string>
-	</dict>
-	<key>7</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>college</string>
-	</dict>
-	<key>9</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>nightPowell</string>
+		<real>34.066639</real>
+		<key>building</key>
+		<string>Center for Health Sciences</string>
+		<key>street</key>
+		<string>12-077 Center for Health Sciences</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1798</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
 	<key>10</key>
 	<dict>
-		<key>latitude</key>
-		<real>34.075112</real>
-		<key>longitude</key>
-		<real>-118.441485</real>
+		<key>name</key>
+		<string>East Asian Library</string>
+		<key>secondaryName</key>
+		<string>Richard C. Rudolph</string>
 		<key>imageName</key>
 		<string>eastAsian</string>
-	</dict>
-	<key>31</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
 		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>englishReadingRoom</string>
-	</dict>
-	<key>47</key>
-	<dict>
+		<real>-118.441832</real>
 		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>collegeLibraryLaptopLending</string>
+		<real>34.074759</real>
+		<key>building</key>
+		<string>Charles E. Young Research Library</string>
+		<key>street</key>
+		<string>21617 Charles E. Young Research Library</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1575</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
-	<key>48</key>
+	<key>2</key>
 	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
+		<key>name</key>
+		<string>Law Library</string>
+		<key>secondaryName</key>
+		<string>Hugh &amp; Hazel Darling</string>
 		<key>imageName</key>
-		<string>researchLibraryLaptopLending</string>
+		<string></string>
+		<key>longitude</key>
+		<real>-118.438346</real>
+		<key>latitude</key>
+		<real>34.072895</real>
+		<key>building</key>
+		<string>Law Building</string>
+		<key>street</key>
+		<string>1112 Law Building, 385 Charles E. Young Drive East</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1458</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
-	<key>49</key>
+	<key>3</key>
 	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
+		<key>name</key>
+		<string>Library Special Collections</string>
 		<key>imageName</key>
-		<string>artsLibraryLaptopLending</string>
-	</dict>
-	<key>50</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
+		<string></string>
 		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>musicLibraryLaptopLending</string>
-	</dict>
-	<key>51</key>
-	<dict>
+		<real>-118.441485</real>
 		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>biomedLibraryLaptopLending</string>
-	</dict>
-	<key>52</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>emsLibraryLaptopLending</string>
-	</dict>
-	<key>53</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>geologyLibraryLaptopLending</string>
+		<real>34.075112</real>
+		<key>building</key>
+		<string>Charles E. Young Research Library</string>
+		<key>street</key>
+		<string>A1713 Charles E. Young Research Library </string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1575</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
 	<key>14</key>
 	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
+		<key>name</key>
+		<string>Management Library</string>
+		<key>secondaryName</key>
+		<string>Eugene &amp; Maxine Rosenfeld</string>
 		<key>imageName</key>
-		<string>management</string>
+		<string>business</string>
+		<key>longitude</key>
+		<real>-118.443379</real>
+		<key>latitude</key>
+		<real>34.07435</real>
+		<key>building</key>
+		<string>UCLA Anderson School of Management</string>
+		<key>street</key>
+		<string>110 Westwood Plaza, E-301 Box 951460</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1460</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
 	<key>16</key>
 	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
+		<key>name</key>
+		<string>Music Library</string>
 		<key>imageName</key>
-		<string>music</string>
+		<string></string>
+		<key>longitude</key>
+		<real>-118.440417</real>
+		<key>latitude</key>
+		<real>34.07094</real>
+		<key>building</key>
+		<string>Schoenberg Music Building</string>
+		<key>street</key>
+		<string>1102 Schoenberg Music Building</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1490</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
-	<key>56</key>
+	<key>7</key>
 	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
+		<key>name</key>
+		<string>Powell Library</string>
 		<key>imageName</key>
-		<string>researchCommons</string>
-	</dict>
-	<key>19</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
+		<string>powell</string>
 		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>reprographicServ</string>
-	</dict>
-	<key>24</key>
-	<dict>
+		<real>-118.44218</real>
 		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>selChemistry</string>
-	</dict>
-	<key>25</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>selEngAndMathSci</string>
-	</dict>
-	<key>26</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>selGeo</string>
-	</dict>
-	<key>27</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>srlf</string>
-	</dict>
-	<key>28</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>universityArchives</string>
-	</dict>
-	<key>32</key>
-	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
-		<key>imageName</key>
-		<string>labSchool</string>
+		<real>34.07162</real>
+		<key>street</key>
+		<string>405 Hilgard Ave</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
 	<key>20</key>
 	<dict>
-		<key>latitude</key>
-		<integer>0</integer>
-		<key>longitude</key>
-		<integer>0</integer>
+		<key>name</key>
+		<string>Research Library</string>
+		<key>secondaryName</key>
+		<string>Charles E. Young</string>
 		<key>imageName</key>
 		<string>yrl</string>
+		<key>longitude</key>
+		<real>-118.44165</real>
+		<key>latitude</key>
+		<real>34.074954</real>
+		<key>street</key>
+		<string>Charles E. Young Research Library</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1575</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
+	</dict>
+	<key>25</key>
+	<dict>
+		<key>name</key>
+		<string>Science and Engineering Library</string>
+		<key>imageName</key>
+		<string>sel</string>
+		<key>longitude</key>
+		<real>-118.442706</real>
+		<key>latitude</key>
+		<real>34.068826</real>
+		<key>building</key>
+		<string>Boelter Hall</string>
+		<key>street</key>
+		<string>8270 Boelter Hall</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
+	</dict>
+	<key>27</key>
+	<dict>
+		<key>name</key>
+		<string>Southern Regional Library Facility</string>
+		<key>imageName</key>
+		<string></string>
+		<key>longitude</key>
+		<real>-118.454188</real>
+		<key>latitude</key>
+		<real>34.070864</real>
+		<key>street</key>
+		<string>Box 951388 305 De Neve Drive Parking Lot 17</string>
+		<key>city</key>
+		<string>Los Angeles</string>
+		<key>ZIP</key>
+		<string>90095-1388</string>
+		<key>state</key>
+		<string>CA</string>
+		<key>country</key>
+		<string>US</string>
 	</dict>
 </dict>
 </plist>

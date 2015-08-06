@@ -31,7 +31,7 @@ class LibraryListViewController: UIViewController {
         
         librariesTableView.dataSource = self
         librariesTableView.delegate = self
-        librariesTableView.layer.cornerRadius = 5
+//        librariesTableView.layer.cornerRadius = 5
         librariesTableView.separatorStyle = .None
     }
     
@@ -47,17 +47,7 @@ class LibraryListViewController: UIViewController {
         notificationCenter.removeObserver(self, name: "LibraryDataReady", object: nil)
     }
     
-    func sortResults() {
-        self.libraries?.sort() {(a, b) -> Bool in
-            if a.state?.rawValue > b.state?.rawValue {
-                return true
-            } else if a.state?.rawValue == b.state?.rawValue {
-                return a.name < b.name
-            } else {
-                return false
-            }
-        }
-    }
+
     
     // MARK: Notifications
     func processLibraryListData(notification: NSNotification) {
@@ -80,6 +70,18 @@ class LibraryListViewController: UIViewController {
             library.updateState()
             sortResults()
             librariesTableView.reloadData()
+        }
+    }
+    
+    func sortResults() {
+        self.libraries?.sort() {(a, b) -> Bool in
+            if a.state?.rawValue > b.state?.rawValue {
+                return true
+            } else if a.state?.rawValue == b.state?.rawValue {
+                return a.name < b.name
+            } else {
+                return false
+            }
         }
     }
     

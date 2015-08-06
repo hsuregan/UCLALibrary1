@@ -16,6 +16,8 @@ class LibraryDisplayViewController: UIViewController {
     
     var library: Library!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBOutlet weak var verticalScrollView: UIScrollView!
     @IBOutlet weak var verticalScrollViewContentView: UIView!
     @IBOutlet weak var horizontalScrollView: UIScrollView!
@@ -41,17 +43,16 @@ class LibraryDisplayViewController: UIViewController {
     }
     
 
-    
-    
     // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = library.name
+        self.imageView.image = UIImage(named: self.library.imageName)
         
         mapView.delegate = self
         let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(library.location.latitude), longitude: CLLocationDegrees(library.location.longitude))
-        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.region = region
         var annotation = MKPointAnnotation()
@@ -66,8 +67,32 @@ class LibraryDisplayViewController: UIViewController {
         setupNavigationBar()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "processLibraryData:", name: "LibraryDataReady", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: "LibraryListDataReady", object: nil)
+    }
+    
+    
+    func processLibraryData(notification: NSNotification) {
+        let data = notification.userInfo!
+        let operatingHoursData = data["data"] as! OperatingHoursData
+        let operatingHours = operatingHoursData.operatingHours
+        let ID = operatingHoursData.ID
+        
+        if library.ID == ID {
+            library.operatingHours = operatingHours
+            library.updateState()
+            setupHorizontalScrollView()
+        }
+    }
+    
     func setupVerticalScrollView() {
-        let width = Utility.screenSize().width
+        let width = UIView.screenSize().width
         let height = verticalScrollViewContentView.frame.height
         verticalScrollView.contentSize =  CGSize(width: width, height: height)
     }

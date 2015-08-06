@@ -34,6 +34,7 @@ class DataManager {
     func dataForLibraries() {
         if let libraries = self.libraries {
             postNotification("LibraryListDataReady", data: self.libraries)
+            self.fetchAllLibraryData()
         } else {
             fetchLibraryUnitDataFromNetwork()
         }
@@ -79,7 +80,7 @@ class DataManager {
                     let name = libraryData[index]["name"].string
                     let ID = libraryData[index]["id"].string
                     if let name = name, ID = ID {
-                        let libraries = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("NewLibraries", ofType: "plist")!)
+                        let libraries = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Libraries", ofType: "plist")!)
                         if libraries?.objectForKey(ID) as? NSDictionary != nil {
                             var library = Library(name: name, ID: ID)
                             self.libraries!.append(library)

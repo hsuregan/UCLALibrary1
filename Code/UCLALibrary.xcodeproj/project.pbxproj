@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8311A3DD1B730613000551A3 /* NewLibraries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8311A3DC1B730613000551A3 /* NewLibraries.plist */; };
+		8311A3DD1B730613000551A3 /* Libraries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8311A3DC1B730613000551A3 /* Libraries.plist */; };
 		8311A3DF1B731068000551A3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8311A3DE1B731068000551A3 /* Location.swift */; };
+		8363417A1B748F66004DDB5C /* Libraries.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836341791B748F66004DDB5C /* Libraries.xcassets */; };
 		836ED77B1B7253AE003EAAEF /* LibraryUnits.plist in Resources */ = {isa = PBXBuildFile; fileRef = 836ED77A1B7253AE003EAAEF /* LibraryUnits.plist */; };
 		83738D691B5ACF8100E70A32 /* LibraryHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83738D681B5ACF8100E70A32 /* LibraryHoursView.swift */; };
 		83738D6B1B5AE3A300E70A32 /* LibraryHoursView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83738D6A1B5AE3A300E70A32 /* LibraryHoursView.xib */; };
 		838045FB1B6D824F003CE83A /* UIColor+ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */; };
-		838045FD1B6D8DDC003CE83A /* Libraries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 838045FC1B6D8DDC003CE83A /* Libraries.plist */; };
-		83A16DB81B6EAEC70005F337 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A16DB71B6EAEC70005F337 /* Utility.swift */; };
+		83A16DB81B6EAEC70005F337 /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A16DB71B6EAEC70005F337 /* UIView+Utilities.swift */; };
 		83A16DBA1B6EB2FC0005F337 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A16DB91B6EB2FC0005F337 /* DataManager.swift */; };
 		83B632231B70668A00CAF5A7 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B632221B70668A00CAF5A7 /* NSDate+Utilities.swift */; };
 		83CB32E71B58ADEE00CA8E41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */; };
@@ -44,14 +44,14 @@
 /* Begin PBXFileReference section */
 		2D8E257C98E092FAFBE750C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5611009AA4446C08C8C0437C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8311A3DC1B730613000551A3 /* NewLibraries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewLibraries.plist; sourceTree = "<group>"; };
+		8311A3DC1B730613000551A3 /* Libraries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Libraries.plist; sourceTree = "<group>"; };
 		8311A3DE1B731068000551A3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		836341791B748F66004DDB5C /* Libraries.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Libraries.xcassets; sourceTree = "<group>"; };
 		836ED77A1B7253AE003EAAEF /* LibraryUnits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LibraryUnits.plist; sourceTree = "<group>"; };
 		83738D681B5ACF8100E70A32 /* LibraryHoursView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryHoursView.swift; sourceTree = "<group>"; };
 		83738D6A1B5AE3A300E70A32 /* LibraryHoursView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryHoursView.xib; sourceTree = "<group>"; };
 		838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ApplicationColors.swift"; sourceTree = "<group>"; };
-		838045FC1B6D8DDC003CE83A /* Libraries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Libraries.plist; sourceTree = "<group>"; };
-		83A16DB71B6EAEC70005F337 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		83A16DB71B6EAEC70005F337 /* UIView+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 		83A16DB91B6EB2FC0005F337 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		83B632221B70668A00CAF5A7 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		83CB32E11B58ADEE00CA8E41 /* UCLALibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCLALibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +119,29 @@
 			name = "Library Diplay";
 			sourceTree = "<group>";
 		};
+		839A6DCD1B883AFC009C1AB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */,
+				83CB32F21B58ADEE00CA8E41 /* LaunchScreen.xib */,
+				83CB32E81B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld */,
+				83CB32F01B58ADEE00CA8E41 /* Images.xcassets */,
+				836341791B748F66004DDB5C /* Libraries.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		839A6DCE1B883B2A009C1AB8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83A16DB71B6EAEC70005F337 /* UIView+Utilities.swift */,
+				838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */,
+				83EC86FA1B58CFC5009FE533 /* String+Utilities.swift */,
+				83B632221B70668A00CAF5A7 /* NSDate+Utilities.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		83CB32D81B58ADEE00CA8E41 = {
 			isa = PBXGroup;
 			children = (
@@ -142,20 +165,13 @@
 		83CB32E31B58ADEE00CA8E41 /* UCLALibrary */ = {
 			isa = PBXGroup;
 			children = (
+				83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */,
+				839A6DCE1B883B2A009C1AB8 /* Extensions */,
+				839A6DCD1B883AFC009C1AB8 /* Resources */,
 				838045F81B6D81BC003CE83A /* Library List */,
 				838045F91B6D81D1003CE83A /* Library Diplay */,
 				83EC86EF1B58BB39009FE533 /* Models */,
-				83CB32E61B58ADEE00CA8E41 /* AppDelegate.swift */,
-				83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */,
-				83CB32F01B58ADEE00CA8E41 /* Images.xcassets */,
-				83CB32F21B58ADEE00CA8E41 /* LaunchScreen.xib */,
-				83CB32E81B58ADEE00CA8E41 /* UCLALibrary.xcdatamodeld */,
 				83CB32E41B58ADEE00CA8E41 /* Supporting Files */,
-				83EC86EE1B58B38C009FE533 /* UCLALibraryBridgingHeader.h */,
-				83A16DB71B6EAEC70005F337 /* Utility.swift */,
-				838045FA1B6D824F003CE83A /* UIColor+ApplicationColors.swift */,
-				83EC86FA1B58CFC5009FE533 /* String+Utilities.swift */,
-				83B632221B70668A00CAF5A7 /* NSDate+Utilities.swift */,
 			);
 			path = UCLALibrary;
 			sourceTree = "<group>";
@@ -163,9 +179,9 @@
 		83CB32E41B58ADEE00CA8E41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83EC86EE1B58B38C009FE533 /* UCLALibraryBridgingHeader.h */,
 				83CB32E51B58ADEE00CA8E41 /* Info.plist */,
-				8311A3DC1B730613000551A3 /* NewLibraries.plist */,
-				838045FC1B6D8DDC003CE83A /* Libraries.plist */,
+				8311A3DC1B730613000551A3 /* Libraries.plist */,
 				836ED77A1B7253AE003EAAEF /* LibraryUnits.plist */,
 			);
 			name = "Supporting Files";
@@ -293,10 +309,10 @@
 				836ED77B1B7253AE003EAAEF /* LibraryUnits.plist in Resources */,
 				83CB32EF1B58ADEE00CA8E41 /* Main.storyboard in Resources */,
 				83CB32F41B58ADEE00CA8E41 /* LaunchScreen.xib in Resources */,
-				838045FD1B6D8DDC003CE83A /* Libraries.plist in Resources */,
-				8311A3DD1B730613000551A3 /* NewLibraries.plist in Resources */,
+				8311A3DD1B730613000551A3 /* Libraries.plist in Resources */,
 				83738D6B1B5AE3A300E70A32 /* LibraryHoursView.xib in Resources */,
 				83CB32F11B58ADEE00CA8E41 /* Images.xcassets in Resources */,
+				8363417A1B748F66004DDB5C /* Libraries.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +389,7 @@
 				83CB32E71B58ADEE00CA8E41 /* AppDelegate.swift in Sources */,
 				83EC86F31B58BB83009FE533 /* LibraryListViewController.swift in Sources */,
 				83A16DBA1B6EB2FC0005F337 /* DataManager.swift in Sources */,
-				83A16DB81B6EAEC70005F337 /* Utility.swift in Sources */,
+				83A16DB81B6EAEC70005F337 /* UIView+Utilities.swift in Sources */,
 				83EC86FB1B58CFC5009FE533 /* String+Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
