@@ -9,16 +9,16 @@
 import UIKit
 
 extension UIView {
-    static func screenSize() -> CGSize {
-        let width = UIScreen.mainScreen().bounds.size.width
-        let height = UIScreen.mainScreen().bounds.size.height
-        return CGSize(width: width, height: height)
-    }
-    
-    static func screenCenter() -> CGPoint {
-        let screenSize = UIView.screenSize()
-        let centerX = screenSize.width / 2
-        let centerY = screenSize.height / 2
-        return CGPoint(x: centerX, y: centerY)
-    }
+  static func screenSize() -> CGSize {
+    let width = UIScreen.mainScreen().bounds.size.width
+    let height = UIScreen.mainScreen().bounds.size.height
+    return CGSize(width: width, height: height)
+  }
+  
+  static func screenCenter() -> CGPoint {
+    let screenSize = UIView.screenSize()
+    let centerX = screenSize.width / 2
+    let centerY = screenSize.height / 2
+    return CGPoint(x: centerX, y: centerY)
+  }
 }

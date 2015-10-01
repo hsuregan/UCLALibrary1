@@ -22,7 +22,6 @@
 		83CB32EF1B58ADEE00CA8E41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */; };
 		83CB32F11B58ADEE00CA8E41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83CB32F01B58ADEE00CA8E41 /* Images.xcassets */; };
 		83CB32F41B58ADEE00CA8E41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CB32F21B58ADEE00CA8E41 /* LaunchScreen.xib */; };
-		83CB33001B58ADEE00CA8E41 /* UCLALibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB32FF1B58ADEE00CA8E41 /* UCLALibraryTests.swift */; };
 		83EC86F31B58BB83009FE533 /* LibraryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86F21B58BB83009FE533 /* LibraryListViewController.swift */; };
 		83EC86F51B58BBCF009FE533 /* LibraryDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86F41B58BBCF009FE533 /* LibraryDisplayViewController.swift */; };
 		83EC86F71B58BC53009FE533 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86F61B58BC53009FE533 /* Library.swift */; };
@@ -30,16 +29,6 @@
 		83EC86FB1B58CFC5009FE533 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC86FA1B58CFC5009FE533 /* String+Utilities.swift */; };
 		CE11A561F403BDC35A32D53F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5611009AA4446C08C8C0437C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		83CB32FA1B58ADEE00CA8E41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CB32D91B58ADEE00CA8E41 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 83CB32E01B58ADEE00CA8E41;
-			remoteInfo = UCLALibrary;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2D8E257C98E092FAFBE750C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,9 +50,6 @@
 		83CB32EE1B58ADEE00CA8E41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83CB32F01B58ADEE00CA8E41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83CB32F31B58ADEE00CA8E41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		83CB32F91B58ADEE00CA8E41 /* UCLALibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCLALibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		83CB32FE1B58ADEE00CA8E41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83CB32FF1B58ADEE00CA8E41 /* UCLALibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCLALibraryTests.swift; sourceTree = "<group>"; };
 		83EC86EE1B58B38C009FE533 /* UCLALibraryBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCLALibraryBridgingHeader.h; sourceTree = "<group>"; };
 		83EC86F21B58BB83009FE533 /* LibraryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LibraryListViewController.swift; path = Controller/LibraryListViewController.swift; sourceTree = "<group>"; };
 		83EC86F41B58BBCF009FE533 /* LibraryDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDisplayViewController.swift; sourceTree = "<group>"; };
@@ -79,13 +65,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE11A561F403BDC35A32D53F /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83CB32F61B58ADEE00CA8E41 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				83CB32E31B58ADEE00CA8E41 /* UCLALibrary */,
-				83CB32FC1B58ADEE00CA8E41 /* UCLALibraryTests */,
 				83CB32E21B58ADEE00CA8E41 /* Products */,
 				D7A4BAFDA8558E534AE9B4A7 /* Pods */,
 				0653E6801627F88C7B82380A /* Frameworks */,
@@ -157,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				83CB32E11B58ADEE00CA8E41 /* UCLALibrary.app */,
-				83CB32F91B58ADEE00CA8E41 /* UCLALibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +147,7 @@
 				839A6DCD1B883AFC009C1AB8 /* Resources */,
 				838045F81B6D81BC003CE83A /* Library List */,
 				838045F91B6D81D1003CE83A /* Library Diplay */,
+				83A16DB91B6EB2FC0005F337 /* DataManager.swift */,
 				83EC86EF1B58BB39009FE533 /* Models */,
 				83CB32E41B58ADEE00CA8E41 /* Supporting Files */,
 			);
@@ -187,29 +165,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		83CB32FC1B58ADEE00CA8E41 /* UCLALibraryTests */ = {
-			isa = PBXGroup;
-			children = (
-				83CB32FF1B58ADEE00CA8E41 /* UCLALibraryTests.swift */,
-				83CB32FD1B58ADEE00CA8E41 /* Supporting Files */,
-			);
-			path = UCLALibraryTests;
-			sourceTree = "<group>";
-		};
-		83CB32FD1B58ADEE00CA8E41 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				83CB32FE1B58ADEE00CA8E41 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		83EC86EF1B58BB39009FE533 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				83EC86F61B58BC53009FE533 /* Library.swift */,
 				8311A3DE1B731068000551A3 /* Location.swift */,
-				83A16DB91B6EB2FC0005F337 /* DataManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -246,24 +206,6 @@
 			productReference = 83CB32E11B58ADEE00CA8E41 /* UCLALibrary.app */;
 			productType = "com.apple.product-type.application";
 		};
-		83CB32F81B58ADEE00CA8E41 /* UCLALibraryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 83CB33061B58ADEE00CA8E41 /* Build configuration list for PBXNativeTarget "UCLALibraryTests" */;
-			buildPhases = (
-				83CB32F51B58ADEE00CA8E41 /* Sources */,
-				83CB32F61B58ADEE00CA8E41 /* Frameworks */,
-				83CB32F71B58ADEE00CA8E41 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				83CB32FB1B58ADEE00CA8E41 /* PBXTargetDependency */,
-			);
-			name = UCLALibraryTests;
-			productName = UCLALibraryTests;
-			productReference = 83CB32F91B58ADEE00CA8E41 /* UCLALibraryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -275,10 +217,6 @@
 				TargetAttributes = {
 					83CB32E01B58ADEE00CA8E41 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					83CB32F81B58ADEE00CA8E41 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 83CB32E01B58ADEE00CA8E41;
 					};
 				};
 			};
@@ -296,7 +234,6 @@
 			projectRoot = "";
 			targets = (
 				83CB32E01B58ADEE00CA8E41 /* UCLALibrary */,
-				83CB32F81B58ADEE00CA8E41 /* UCLALibraryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,13 +250,6 @@
 				83738D6B1B5AE3A300E70A32 /* LibraryHoursView.xib in Resources */,
 				83CB32F11B58ADEE00CA8E41 /* Images.xcassets in Resources */,
 				8363417A1B748F66004DDB5C /* Libraries.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83CB32F71B58ADEE00CA8E41 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,23 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83CB32F51B58ADEE00CA8E41 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83CB33001B58ADEE00CA8E41 /* UCLALibraryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		83CB32FB1B58ADEE00CA8E41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 83CB32E01B58ADEE00CA8E41 /* UCLALibrary */;
-			targetProxy = 83CB32FA1B58ADEE00CA8E41 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		83CB32ED1B58ADEE00CA8E41 /* Main.storyboard */ = {
@@ -541,40 +455,6 @@
 			};
 			name = Release;
 		};
-		83CB33071B58ADEE00CA8E41 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = UCLALibraryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCLALibrary.app/UCLALibrary";
-			};
-			name = Debug;
-		};
-		83CB33081B58ADEE00CA8E41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = UCLALibraryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCLALibrary.app/UCLALibrary";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,15 +472,6 @@
 			buildConfigurations = (
 				83CB33041B58ADEE00CA8E41 /* Debug */,
 				83CB33051B58ADEE00CA8E41 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		83CB33061B58ADEE00CA8E41 /* Build configuration list for PBXNativeTarget "UCLALibraryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83CB33071B58ADEE00CA8E41 /* Debug */,
-				83CB33081B58ADEE00CA8E41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

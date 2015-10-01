@@ -9,18 +9,18 @@
 import Foundation
 
 extension UIColor {
-    static func colorFrom255(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
-        let red = r/255
-        let green = g/255
-        let blue = b/255
-        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-    }
-    
-    static func applicationBlue() -> UIColor {
-        return UIColor.colorFrom255(27, g: 162, b: 237)
-    }
-    
-    static func applicationWhite() -> UIColor {
-        return UIColor.colorFrom255(255, g: 255, b: 255)
-    }
+  static func colorFrom255(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
+    let red = r/255
+    let green = g/255
+    let blue = b/255
+    return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+  }
+  
+  static func applicationBlue() -> UIColor {
+    return UIColor.colorFrom255(27, g: 162, b: 237)
+  }
+  
+  static func applicationWhite() -> UIColor {
+    return UIColor.colorFrom255(255, g: 255, b: 255)
+  }
 }
